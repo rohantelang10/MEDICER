@@ -18,11 +18,11 @@
         <input type="text" id="email" name="email"><br><br>
         <label for="password">password:</label>
         <input type="text" id="password" name="password"><br><br>
-        <label for="isapproved">isapproved:</label>
-        <input type="text" id="isapproved" name="isapproved"><br><br>
+        <!-- <label for="isapproved">isapproved:</label>
+        <input type="text" id="isapproved" name="isapproved"><br><br> -->
         <input type="submit" value="Submit">
     </form>
-    <form action="/" method="get" target="_blank">
+    <form action="/" method="post" target="_blank">
         {% csrf_token %}
         <label for="id">id:</label>
         <input type="text" id="id" name="id"><br><br>

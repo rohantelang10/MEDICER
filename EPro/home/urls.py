@@ -19,6 +19,9 @@ from home import views
 
 urlpatterns = [
     path('', views.index, name='home'),
-    path('insertDailyRecord', views.insertDailyRecord, name='insertDailyRecord'),
-    path('getDailyRecord', views.getDailyRecord, name='getDailyRecord'),
+    path('insertUser', views.insertUser, name='insertUser'),
+    path('getUser', views.getUser, name='getUser'),
+    path('deleteUser', views.deleteUser, name='deleteUser'),
+    path('updateUserPassword', views.updateUserPassword, name='updateUserPassword'),
+    path('updateUserApproval', views.updateUserApproval, name='updateUserApproval'),
 ]

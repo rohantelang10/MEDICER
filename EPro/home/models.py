@@ -10,3 +10,12 @@ class Users(models.Model):
     class Meta:
         managed = False
         db_table = 'users'
+
+class Doctorusers(models.Model):
+    docuserid = models.AutoField(db_column='docUserId', primary_key=True)  # Field name made lowercase.
+    docemail = models.CharField(db_column='docEmail', max_length=50)  # Field name made lowercase.
+    docpassword = models.CharField(db_column='docPassword', max_length=50)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'doctorusers'
