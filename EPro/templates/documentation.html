@@ -16,28 +16,901 @@
 <body>
     <div class="container">
         <h1>Epro API Documentation</h1>
+        <hr style="height: 5px;">
         <br>
         <h3>User API</h3>
         <br>
+
         <!-- Insert User -->
-        <form action='/insertUser' method="post">
-            {% csrf_token %}
-            <h2>Insert User</h2>
-            <div>
-                <label>Email address</label>
-                <input type="email" name="UserInstertEmailInput" class="form-control">
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#UserInsertAPI"
+            aria-expanded="false" aria-controls="UserInsertAPI">
+            Insert User
+        </button>
+        <br><br>
+        <div class="collapse" id="UserInsertAPI">
+            <div class="card card-body">
+                <form action='/insertUser' method="post">
+                    {% csrf_token %}
+                    <h2>Insert User</h2>
+                    <div>
+                        <label>Email address (UserInsertEmailInput)</label>
+                        <input type="email" name="UserInsertEmailInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Password (UserInsertPasswordInput)</label>
+                        <input type="text" name="UserInsertPasswordInput" class="form-control">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
-            <div>
-                <label>Password</label>
-                <input type="text" name="UserInstertPasswordInput" class="form-control">
-            </div>
-            <br>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </div>
         <!-- Insert User End-->
+        <!--  -->
+        <hr>
+        <!--  -->
+        <!-- Get User -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#UserGetAPI"
+            aria-expanded="false" aria-controls="UserGetAPI">
+            Get User
+        </button>
+        <br><br>
+        <div class="collapse" id="UserGetAPI">
+            <div class="card card-body">
+                <form action='/getUser' method="post">
+                    {% csrf_token %}
+                    <h2>Get User</h2>
+                    <div>
+                        <label>User Id (GetUserIdInput)</label>
+                        <input type="text" name="GetUserIdInput" class="form-control">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Get User End-->
+        <!--  -->
+        <hr>
+        <!-- Delete User -->
+        <!--  -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#UserDeleteAPI"
+            aria-expanded="false" aria-controls="UserDeleteAPI">
+            Delete User
+        </button>
+        <br><br>
+        <div class="collapse" id="UserDeleteAPI">
+            <div class="card card-body">
+                <form action='/deleteUser' method="post">
+                    {% csrf_token %}
+                    <h2>Delete User</h2>
+                    <div>
+                        <label>User Id (DeleteUserIdInput)</label>
+                        <input type="text" name="DeleteUserIdInput" class="form-control">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Delete User End-->
+        <!--  -->
+        <hr>
+        <!--  -->
+        <!-- Update User Password -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#UserPasswordUpdateAPI"
+            aria-expanded="false" aria-controls="UserPasswordUpdateAPI">
+            Update User Password
+        </button>
+        <br><br>
+        <div class="collapse" id="UserPasswordUpdateAPI">
+            <div class="card card-body">
+                <form action='/updateUserPassword' method="post">
+                    {% csrf_token %}
+                    <h2>Update User Password</h2>
+                    <div>
+                        <label>User Id (UpdateUserIdInput)</label>
+                        <input type="text" name="UpdateUserIdInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>New Password (UpadateUserPasswordInput)</label>
+                        <input type="text" name="UpadateUserPasswordInput" class="form-control">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Update User Password End-->
+        <!--  -->
+        <hr>
+        <!--  -->
+        <!-- User Approval -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#UserApprovalAPI"
+            aria-expanded="false" aria-controls="UserApprovalAPI">
+            User Approval
+        </button>
+        <br><br>
+        <div class="collapse" id="UserApprovalAPI">
+            <div class="card card-body">
+                <form action='/updateUserApproval' method="post">
+                    {% csrf_token %}
+                    <h2>User Approval</h2>
+                    <div>
+                        <label>User Id (UserApprovalIdInput)</label>
+                        <input type="text" name="UserApprovalIdInput" class="form-control">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- User Approval End-->
+        <!--  -->
+        <hr>
+        <!--  -->
+        <!-- User Login -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#UserLoginAPI"
+            aria-expanded="false" aria-controls="UserLoginAPI">
+            User Login
+        </button>
+        <br><br>
+        <div class="collapse" id="UserLoginAPI">
+            <div class="card card-body">
+                <form action='/loginUser' method="post">
+
+                    <h2>User Login</h2>
+                    <div>
+                        <label>Email (UserLoginEmailInput)</label>
+                        <input type="email" name="UserLoginEmailInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Password (UserLoginPasswordInput)</label>
+                        <input type="text" name="UserLoginPasswordInput" class="form-control">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- User Login End-->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <hr style="height: 2px;">
+        <br>
+        <h3>Doctor User API</h3>
+        <br>
+        <!--  -->
+        <!-- Insert Doctor User -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#DoctorUserInsertAPI"
+            aria-expanded="false" aria-controls="DoctorUserInsertAPI">
+            Doctor User Insert
+        </button>
+        <br><br>
+        <div class="collapse" id="DoctorUserInsertAPI">
+            <div class="card card-body">
+                <form action='/insertDocusers' method="post">
+                    {% csrf_token %}
+                    <h2>Insert Doctor User</h2>
+                    <div>
+                        <label>Doctor Email Address (DocuserInsertEmailInput)</label>
+                        <input type="email" name="DocuserInsertEmailInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Password (DocuserInstertPasswordInput)</label>
+                        <input type="text" name="DocuserInstertPasswordInput" class="form-control">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Insert Doctor User End-->
+        <!--  -->
+        <hr>
+        <!--  -->
+        <!-- Get Doctor User -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#DoctorUserGetAPI"
+            aria-expanded="false" aria-controls="DoctorUserGetAPI">
+            Get Doctor User
+        </button>
+        <br><br>
+        <div class="collapse" id="DoctorUserGetAPI">
+            <div class="card card-body">
+                <form action='/getDocusers' method="post">
+                    {% csrf_token %}
+                    <h2>Get Doctor User</h2>
+                    <div>
+                        <label>Doctor Id (GetDocuserIdInput)</label>
+                        <input type="text" name="GetDocuserIdInput" class="form-control">
+                    </div>
+
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Get Doctor User End-->
+        <!--  -->
+        <hr>
+        <!--  -->
+        <!-- Delete Doctor User -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#DoctorUserDeleteAPI"
+            aria-expanded="false" aria-controls="DoctorUserDeleteAPI">
+            Doctor User Delete
+        </button>
+        <br><br>
+        <div class="collapse" id="DoctorUserDeleteAPI">
+            <div class="card card-body">
+                <form action='/deleteDocuser' method="post">
+                    {% csrf_token %}
+                    <h2>Delete Doctor User</h2>
+                    <div>
+                        <label>User Id (DeleteDocuserIdInput)</label>
+                        <input type="text" name="DeleteDocuserIdInput" class="form-control">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <!-- Delete User End-->
+                <!--  -->
+                <hr>
+            </div>
+        </div>
+        <!-- Delete Doctor User end -->
+        <!--  -->
+        <hr>
+        <!--  -->
+        <!-- Update Doctor User Password -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#DoctorUserUpdateAPI"
+            aria-expanded="false" aria-controls="DoctorUserUpdateAPI">
+            Doctor User Update Password
+        </button>
+        <br><br>
+        <div class="collapse" id="DoctorUserUpdateAPI">
+            <div class="card card-body">
+                <form action='/updateDocuserPassword' method="post">
+                    {% csrf_token %}
+                    <h2>Update Doctor User Password</h2>
+                    <div>
+                        <label>User Id (UpdateDocuserIdInput)</label>
+                        <input type="text" name="UpdateDocuserIdInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>New Password (UpadateDocuserPasswordInput)</label>
+                        <input type="text" name="UpadateDocuserPasswordInput" class="form-control">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Update Doctor User Password End-->
+        <!--  -->
+        <hr>
+        <!--  -->
+        <!-- Doctor User Login -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#DoctorUserLoginAPI"
+            aria-expanded="false" aria-controls="DoctorUserLoginAPI">
+            Doctor User Login API
+        </button>
+        <br><br>
+        <div class="collapse" id="DoctorUserLoginAPI">
+            <div class="card card-body">
+                <form action='/loginDoctoruser' method="post">
+
+                    <h2>Doctor User Login</h2>
+                    <div>
+                        <label>Email (DoctorUserLoginEmailInput)</label>
+                        <input type="email" name="DoctorUserLoginEmailInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Password (DoctorUserLoginPasswordInput)</label>
+                        <input type="text" name="DoctorUserLoginPasswordInput" class="form-control">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Doctor User Login End-->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <hr style="height: 2px;">
+        <br>
+        <h3>Biodata API</h3>
+        <br>
+        <!--  -->
+        <!-- Insert Biodata -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#BiodataInsertAPI"
+            aria-expanded="false" aria-controls="BiodataInsertAPI">
+            Biodata Insert
+        </button>
+        <br><br>
+        <div class="collapse" id="BiodataInsertAPI">
+            <div class="card card-body">
+                <form action='/insertBiodata' method="post">
+                    {% csrf_token %}
+                    <h2>Insert Biodata</h2>
+                    <div>
+                        <label>User Id (BiodataInsertIdInput)</label>
+                        <input type="text" name="BiodataInsertIdInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>First Name (BiodataInsertFirstNameInput)</label>
+                        <input type="text" name="BiodataInsertFirstNameInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Last Name (BiodataInsertLastNameInput)</label>
+                        <input type="text" name="BiodataInsertLastNameInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Age (BiodataInstertAgeInput)</label>
+                        <input type="text" name="BiodataInstertAgeInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Weight (BiodataInstertWeightInput)</label>
+                        <input type="text" name="BiodataInstertWeightInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Is diabetic? (BiodataInsertIsDiabeticInput)</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="BiodataInsertIsDiabeticInput" value="0"
+                                checked>
+                            <label class="form-check-label">
+                                No
+                            </label>
+                        </div>
+                        <div class="from-check">
+                            <input class="form-check-input" type="radio" name="BiodataInsertIsDiabeticInput" value="1">
+                            <label class="form-check-label">
+                                Yes
+                            </label>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Insert Biodata End-->
+        <!--  -->
+        <hr>
+        <!--  -->
+        <!-- Get Biodata -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#BiodataGetAPI"
+            aria-expanded="false" aria-controls="BiodataGetAPI">
+            Get Biodata
+        </button>
+        <br><br>
+        <div class="collapse" id="BiodataGetAPI">
+            <div class="card card-body">
+                <form action='/getBiodata' method="post">
+                    {% csrf_token %}
+                    <h2>Get Biodata</h2>
+                    <div>
+                        <label>User Id (GetUserIdInput)</label>
+                        <input type="text" name="GetUserIdInput" class="form-control">
+                    </div>
+
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Get Biodata End-->
+        <!--  -->
+        <hr>
+        <!--  -->
+        <!-- Update User Biodata -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#UserUpdateBiodataAPI"
+            aria-expanded="false" aria-controls="UserUpdateBiodataAPI">
+            Update User Biodata
+        </button>
+        <br><br>
+        <div class="collapse" id="UserUpdateBiodataAPI">
+            <div class="card card-body">
+                <form action='/updateBiodata' method="post">
+                    {% csrf_token %}
+                    <h2>Update User Biodata</h2>
+                    <div>
+                        <label>User Id (UpdateUserBiodataIdInput)</label>
+                        <input type="text" name="UpdateUserBiodataIdInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>First Name (UpdateUserBiodataFirstnameInput)</label>
+                        <input type="text" name="UpdateUserBiodataFirstnameInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Last Name (UpdateUserBiodataLastnameInput)</label>
+                        <input type="text" name="UpdateUserBiodataLastnameInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Age (UpdateUserBiodataAgeInput)</label>
+                        <input type="text" name="UpdateUserBiodataAgeInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Weight (UpdateUserBiodataWeightInput)</label>
+                        <input type="text" name="UpdateUserBiodataWeightInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Is diabetic? (UpdateUserBiodataIsDiabeticInput)</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="UpdateUserBiodataIsDiabeticInput"
+                                value="0" checked>
+                            <label class="form-check-label">
+                                No
+                            </label>
+                        </div>
+                        <div class="from-check">
+                            <input class="form-check-input" type="radio" name="UpdateUserBiodataIsDiabeticInput"
+                                value="1">
+                            <label class="form-check-label">
+                                Yes
+                            </label>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Update User Biodata End-->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <hr style="height: 2px;">
+        <br>
+        <h3>Doctor Data API</h3>
+        <br>
+        <!-- Insert Doctordata -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#DoctordataInsertAPI"
+            aria-expanded="false" aria-controls="DoctordataInsertAPI">
+            Doctordata Insert
+        </button>
+        <br><br>
+        <div class="collapse" id="DoctordataInsertAPI">
+            <div class="card card-body">
+                <form action='/insertDoctordata' method="post">
+                    {% csrf_token %}
+                    <h2>Insert Doctordata</h2>
+                    <div>
+                        <label>Doctor Id (DoctordataInsertIdInput)</label>
+                        <input type="text" name="DoctordataInsertIdInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>First Name (DoctordataInsertFirstNameInput)</label>
+                        <input type="text" name="DoctordataInsertFirstNameInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Last Name (DoctordataInsertLastNameInput)</label>
+                        <input type="text" name="DoctordataInsertLastNameInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Contact Number (DoctordataInstertContactNumberInput)</label>
+                        <input type="number" name="DoctordataInstertContactNumberInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Clinic Location (DoctordataInstertClinicLocationInput)</label>
+                        <input type="text" name="DoctordataInstertClinicLocationInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Specialization (DoctordataInstertSpecializationInput)</label>
+                        <input type="text" name="DoctordataInstertSpecializationInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Years of Experience (DoctordataInstertExperienceInput)</label>
+                        <input type="number" name="DoctordataInstertExperienceInput" class="form-control">
+                    </div>
+
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Insert Doctordata End-->
+        <hr>
+        <!--  -->
+        <!-- Get Doctor Data -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#DoctorDataGetAPI"
+            aria-expanded="false" aria-controls="DoctorDataGetAPI">
+            Get Doctor Data
+        </button>
+        <br><br>
+        <div class="collapse" id="DoctorDataGetAPI">
+            <div class="card card-body">
+                <form action='/getDoctordata' method="post">
+                    {% csrf_token %}
+                    <h2>Get Doctor Data</h2>
+                    <div>
+                        <label>Doctor Id (GetDocdataIdInput)</label>
+                        <input type="text" name="GetDocdataIdInput" class="form-control">
+                    </div>
+
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Get Doctor Data End-->
+        <!--  -->
+        <hr>
+        <!-- Update Doctordata -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#DoctordataUpdateAPI"
+            aria-expanded="false" aria-controls="DoctordataUpdateAPI">
+            Doctordata Update
+        </button>
+        <br><br>
+        <div class="collapse" id="DoctordataUpdateAPI">
+            <div class="card card-body">
+                <form action='/updateDoctordata' method="post">
+                    {% csrf_token %}
+                    <h2>Update Doctordata</h2>
+                    <div>
+                        <label>Doctor Id (DoctordataUpdataIdInput)</label>
+                        <input type="text" name="DoctordataUpdataIdInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>First Name (DoctordataUpdateFirstNameInput)</label>
+                        <input type="text" name="DoctordataUpdateFirstNameInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Last Name (DoctordataUpdateLastNameInput)</label>
+                        <input type="text" name="DoctordataUpdateLastNameInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Contact Number (DoctordataUpdateContactNumberInput)</label>
+                        <input type="number" name="DoctordataUpdateContactNumberInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Clinic Location (DoctordataUpdateClinicLocationInput)</label>
+                        <input type="text" name="DoctordataUpdateClinicLocationInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Specialization (DoctordataUpdateSpecializationInput)</label>
+                        <input type="text" name="DoctordataUpdateSpecializationInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Years of Experience (DoctordataUpdateExperienceInput)</label>
+                        <input type="number" name="DoctordataUpdateExperienceInput" class="form-control">
+                    </div>
+
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Update Doctordata End-->
+        <hr style="height: 2px;">
+        <!--  -->
+        
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <h3>Questions API</h3>
+        <br>
+        <!-- Insert Questions -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#QuestionInsertAPI"
+            aria-expanded="false" aria-controls="QuestionInsertAPI">
+            Questions Insert
+        </button>
+        <br><br>
+        <div class="collapse" id="QuestionInsertAPI">
+            <div class="card card-body">
+                <form action='/insertQuestion' method="post">
+                    {% csrf_token %}
+                    <h2>Insert Question</h2>
+                    <div>
+                        <label>Doctor User Id (QuestionInsertDocUserIdInput)</label>
+                        <input type="text" name="QuestionInsertDocUserIdInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Question Text (QuestionInsertQuestionTextInput)</label>
+                        <input type="text" name="QuestionInsertQuestionTextInput" class="form-control">
+                    </div>
+                    <hr>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Insert Questions End-->
+        <hr>
+        <!-- Get Questions -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#QuestionGetAPI"
+            aria-expanded="false" aria-controls="QuestionGetAPI">
+            Question Get
+        </button>
+        <br>
+        <div class="collapse" id="QuestionGetAPI">
+            <div class="card card-body">
+                <form action='/getQuestion' method="post">
+                    {% csrf_token %}
+                    <h2>Get Questions</h2>
+                    <div>
+                        <label>Question Id (QuestionGetQuestionIdInput)</label>
+                        <input type="text" name="QuestionGetQuestionIdInput" class="form-control">
+                    </div>
+                    
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Get Questions End-->
+        <br>
+        <hr>
+        <!-- Get All Questions -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#AllQuestionsGetAPI"
+            aria-expanded="false" aria-controls="AllQuestionsGetAPI">
+            All Questions Get
+        </button>
+        <br>
+        <div class="collapse" id="AllQuestionsGetAPI">
+            <div class="card card-body">
+                <form action='/getAllQuestions' method="post">
+                    {% csrf_token %}
+                    <h2>Get All Questions</h2>
+                    <div>
+                        <label>Doctor Id (AllQuestionGetDocIdInput)</label>
+                        <input type="text" name="AllQuestionGetDocIdInput" class="form-control">
+                    </div>
+                    
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Get All Questions End-->
+        <br>
+        <hr>
+        <!-- Update Questions -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#QuestionUpdateAPI"
+            aria-expanded="false" aria-controls="QuestionUpdateAPI">
+            Question Update
+        </button>
+        <br><br>
+        <div class="collapse" id="QuestionUpdateAPI">
+            <div class="card card-body">
+                <form action='/updateQuestion' method="post">
+                    {% csrf_token %}
+                    <h2>Update Questions</h2>
+                    <div>
+                        <label>Question Id (QuestionUpdateQuestionIdInput)</label>
+                        <input type="text" name="QuestionUpdateQuestionIdInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Question Text (QuestionUpdateQusetionTextInput)</label>
+                        <input type="text" name="QuestionUpdateQusetionTextInput" class="form-control">
+                    </div>
+                    
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Update Questions End-->
+        <hr>
+        <!-- Delete Questions -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#QuestionDeleteAPI"
+            aria-expanded="false" aria-controls="QuestionDeleteAPI">
+            Question Delete
+        </button>
+        <br><br>
+        <div class="collapse" id="QuestionDeleteAPI">
+            <div class="card card-body">
+                <form action='/deleteQuestion' method="post">
+                    {% csrf_token %}
+                    <h2>Delete Questions</h2>
+                    <div>
+                        <label>Question Id (QuestionDeleteQuestionIdInput)</label>
+                        <input type="text" name="QuestionDeleteQuestionIdInput" class="form-control">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Delete Questions End-->
+        
+
+
+
+        <hr>
+        <!--  -->
+        <h3>Question Options API</h3>
+        <br>
+        <!-- Insert Questions -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#QuestionOptionInsertAPI"
+            aria-expanded="false" aria-controls="QuestionOptionInsertAPI">
+            Question Option Insert
+        </button>
+        <br><br>
+        <div class="collapse" id="QuestionOptionInsertAPI">
+            <div class="card card-body">
+                <form action='/insertQuestionOption' method="post">
+                    {% csrf_token %}
+                    <h2>Insert Question Option</h2>
+                    <div>
+                        <label>Question Id (QuestionOptionInsertQuestionIdInput)</label>
+                        <input type="text" name="QuestionOptionInsertQuestionIdInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Option Text (QuestionOptionInsertOptionTextInput)</label>
+                        <input type="text" name="QuestionOptionInsertOptionTextInput" class="form-control">
+                    </div>
+                    <hr>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Insert Questions End-->
+        <hr>
+        <!-- Get Questions -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#QuestionOptionGetAPI"
+            aria-expanded="false" aria-controls="QuestionOptionGetAPI">
+            Question Options Get
+        </button>
+        <br>
+        <div class="collapse" id="QuestionOptionGetAPI">
+            <div class="card card-body">
+                <form action='/getQuestionOption' method="post">
+                    {% csrf_token %}
+                    <h2>Get Question Option</h2>
+                    <div>
+                        <label>Question Id (QuestionGetQuestionOptionIdInput)</label>
+                        <input type="text" name="QuestionOptionGetQuestionOptionIdInput" class="form-control">
+                    </div>
+                    
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Get Questions End-->
+        <br>
+        <hr>
+        <!-- Update Questions -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#QuestionoptionUpdateAPI"
+            aria-expanded="false" aria-controls="QuestionoptionUpdateAPI">
+            Question Options Update
+        </button>
+        <br><br>
+        <div class="collapse" id="QuestionoptionUpdateAPI">
+            <div class="card card-body">
+                <form action='/updateQuestionOption' method="post">
+                    {% csrf_token %}
+                    <h2>Update Question Options</h2>
+                    <div>
+                        <label>Question Id (QuestionOptionUpdateOptionIdInput)</label>
+                        <input type="text" name="QuestionOptionUpdateOptionIdInput" class="form-control">
+                    </div>
+                    <div>
+                        <label>Question Text (QuestionOptionUpdateOptionTextInput)</label>
+                        <input type="text" name="QuestionOptionUpdateOptionTextInput" class="form-control">
+                    </div>
+                    
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Update Questions End-->
+        <hr>
+        <!-- Delete Questions -->
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#QuestionOptionDeleteAPI"
+            aria-expanded="false" aria-controls="QuestionOptionDeleteAPI">
+            Question Options Delete
+        </button>
+        <br><br>
+        <div class="collapse" id="QuestionOptionDeleteAPI">
+            <div class="card card-body">
+                <form action='/deleteQuestionOption' method="post">
+                    {% csrf_token %}
+                    <h2>Delete Question Option</h2>
+                    <div>
+                        <label>Question Id (QuestionOptionDeleteOptionIdInput)</label>
+                        <input type="text" name="QuestionOptionDeleteOptionIdInput" class="form-control">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- Delete Questions End-->
+        <hr>
+        <!--  -->
+     
+
+
+
     </div>
-
-
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
